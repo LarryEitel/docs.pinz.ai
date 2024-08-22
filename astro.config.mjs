@@ -1,5 +1,9 @@
 import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
+// Load environment variables
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 export const locales = {
 	root: { label: 'English', lang: 'en' },
@@ -19,13 +23,13 @@ export const locales = {
 	da: { label: 'Dansk', lang: 'da' },
 	uk: { label: 'Українська', lang: 'uk' },
 };
-
-const PREVIEW_SITE = process.env.CONTEXT !== 'production' && process.env.DEPLOY_PRIME_URL;
-
+const CONTEXT = process.env.CONTEXT || 'development';
+const DEPLOY_PRIME_URL = process.env.DEPLOY_PRIME_URL || 'http://localhost:3000';
+const PREVIEW_SITE = CONTEXT !== 'production' && DEPLOY_PRIME_URL;
 
 // https://astro.build/config
 export default defineConfig({
-	site: PREVIEW_SITE,
+	site: PREVIEW_SITE || 'https://docs.pinz.ai/',
 	trailingSlash: 'always',
     integrations: [
 		starlight({

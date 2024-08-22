@@ -5,21 +5,17 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Pinz Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/LarryEitel/docs.pinz.ai',
 			},
 			sidebar: [
 				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Guide', slug: 'guides/toc' },
 					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
 				},
 			],
 		}),

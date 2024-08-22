@@ -34,13 +34,8 @@ export default defineConfig({
     integrations: [
 		starlight({
             title: {
-				en: 'Pinz Docs'
+				en: 'pinz.ai📍docs'
 			},
-            logo: {
-				light: '/src/assets/logo.svg',
-				dark: '/src/assets/logo.svg',
-				replacesTitle: false,
-            },
             editLink: {
 				baseUrl: 'https://github.com/LarryEitel/docs.pinz.ai/edit/main/src/content/docs',
 			},

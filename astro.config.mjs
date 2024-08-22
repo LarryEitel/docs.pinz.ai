@@ -24,27 +24,23 @@ export const locales = {
 	uk: { label: 'Українська', lang: 'uk' },
 };
 const CONTEXT = process.env.CONTEXT || 'development';
-const DEPLOY_PRIME_URL = process.env.DEPLOY_PRIME_URL || 'http://localhost:3000';
-const PREVIEW_SITE = CONTEXT !== 'production' && DEPLOY_PRIME_URL;
+const PREVIEW_SITE = CONTEXT !== 'production' && 'http://localhost:4321' || 'https://docs.pinz.ai/';
+const PINZ_SITE = CONTEXT !== 'production' && 'https://localhost' || 'https://pinz.ai/';
 
-// https://astro.build/config
 export default defineConfig({
-	site: PREVIEW_SITE || 'https://docs.pinz.ai/',
+	site: PREVIEW_SITE,
 	trailingSlash: 'always',
     integrations: [
 		starlight({
             title: {
 				en: 'pinz.ai📍docs'
 			},
-            editLink: {
-				baseUrl: 'https://github.com/LarryEitel/docs.pinz.ai/edit/main/src/content/docs',
-			},
-            social: {
-				github: 'https://github.com/LarryEitel/docs.pinz.ai',
-				discord: 'https://discord.gg/TrV8Zh4b',
-			},
-			locales,
 			sidebar: [
+				{
+					label: '',
+					link: PINZ_SITE,
+					badge: '← Return to Pinz.ai',
+				},
 				{
 					label: 'Start Here',
 					translations: {
@@ -121,6 +117,7 @@ export default defineConfig({
 					autogenerate: {directory: 'resources'},
 				},
 			],
+			locales,
 			plugins: process.env.CHECK_LINKS
 				? [
 					starlightLinksValidator({
@@ -129,6 +126,16 @@ export default defineConfig({
 					}),
 				]
 				: [],
+			customCss: [
+				'/src/styles/custom.css',
+			],
+			editLink: {
+				baseUrl: 'https://github.com/LarryEitel/docs.pinz.ai/edit/main/src/content/docs',
+			},
+			social: {
+				github: 'https://github.com/LarryEitel/docs.pinz.ai',
+				discord: 'https://discord.gg/TrV8Zh4b',
+			},
         }),
     ],
 });

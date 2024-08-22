@@ -1,0 +1,10 @@
+:root {
+  --sl-content-width: 50rem;
+  --sl-text-5xl: 3.5rem;
+}
+
+.return-link a {
+  font-weight: bold;
+  color: #your-brand-color;
+  /* Add any other custom styles */
+}

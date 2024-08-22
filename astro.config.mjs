@@ -63,7 +63,8 @@ export default defineConfig({
 						uk: 'Почніть звідси'
 					},
 					items: [
-						'getting-started',
+						'sign-up',
+						'sign-in',
 					],
 				},
 				{
@@ -109,6 +110,7 @@ export default defineConfig({
 					label: 'Resources',
 					translations: {
 						'zh-CN': '资源',
+						es: 'Recursos',
 						fr: 'Ressources',
 						'pt-BR': 'Recursos',
 						'pt-PT': 'Recursos',

@@ -33,11 +33,13 @@ export default defineConfig({
 	trailingSlash: 'always',
     integrations: [
 		starlight({
-            title: 'Pinz Docs',
+            title: {
+				en: 'Pinz Docs'
+			},
             logo: {
 				light: '/src/assets/logo.svg',
 				dark: '/src/assets/logo.svg',
-				replacesTitle: true,
+				replacesTitle: false,
             },
             editLink: {
 				baseUrl: 'https://github.com/LarryEitel/docs.pinz.ai/edit/main/src/content/docs',

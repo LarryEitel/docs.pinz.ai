@@ -1,0 +1,18 @@
+---
+import FluidGrid from './fluid-grid.astro';
+import YoutubeCard from './youtube-card.astro';
+
+export interface Props {
+	videos: Array<{
+		href: string;
+		title: string;
+		description: string;
+	}>;
+}
+
+const { videos } = Astro.props;
+---
+
+<FluidGrid minColumnWidth="16rem">
+	{videos.map((video) => <YoutubeCard {...video} />)}
+</FluidGrid>

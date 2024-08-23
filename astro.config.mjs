@@ -133,6 +133,7 @@ export default defineConfig({
 				baseUrl: 'https://github.com/LarryEitel/docs.pinz.ai/edit/main/src/content/docs',
 			},
 			social: {
+				youtube: 'https://www.youtube.com/channel/UCn2NqLWFzf9KSKfDVV96OWw',
 				github: 'https://github.com/LarryEitel/docs.pinz.ai',
 				discord: 'https://discord.gg/TrV8Zh4b',
 			},

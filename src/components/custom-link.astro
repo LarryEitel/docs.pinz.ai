@@ -1,0 +1,17 @@
+---
+const {href, ...props} = Astro.props;
+
+// Function to prepend '/docs' to internal links
+function prependDocs(href: string) {
+    if (href.startsWith('http') || href.startsWith('/docs')) {
+        return href;
+    }
+    return `/docs${href.startsWith('/') ? '' : '/'}${href}`;
+}
+
+const modifiedHref = prependDocs(href);
+---
+
+<a href={modifiedHref} {...props}>
+  <slot />
+</a>
